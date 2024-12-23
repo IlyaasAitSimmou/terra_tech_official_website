@@ -1,0 +1,32 @@
+.regNavItems {
+  width: 10%;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+.regNavText {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ContactItem {
+  background-color: #f5f5f5;
+  border-width: 10px;
+  border-color: #ff0000;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.ContactFont {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
