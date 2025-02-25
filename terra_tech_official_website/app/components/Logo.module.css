@@ -1,0 +1,14 @@
+.logo_title {
+    font-family: "Inter", sans-serif;
+    color: #a8dc2b;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* width: 300px; */
+}

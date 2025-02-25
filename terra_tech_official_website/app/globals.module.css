@@ -1,32 +1,111 @@
-.regNavItems {
-  width: 10%;
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-right: 100px; */
+  position: fixed; /* Ensures it's placed over the background */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: transparent; /* Fully transparent */
+}
+.NavLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
   padding: 0 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease; */
+}
+
+.body {
+  margin: 0;
+}
+
+.regNavItems {
+  width: auto;
+  padding: 0 20px;
+  text-decoration: none;
+  /* background-color: #fff; */
 }
 
 .regNavText {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
-  font-weight: 500;
-  color: #000;
+  font-weight: 300;
+  color: #fff;
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.regNavText:hover {
+  color: #a8dc2b;
+  /* text-decoration: underline; */
 }
 
 .ContactItem {
-  background-color: #f5f5f5;
+  background: linear-gradient(90deg, #16A34A, #4ADE80);
   border-width: 10px;
-  border-color: #ff0000;
-  border-radius: 5px;
+  /* border-color: #ff0000; */
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
   margin-left: 10px;
+  padding-top: 5px;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+.ContactItem:hover {
+  transform: scale(1.05);
 }
 
 .ContactFont {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
-  font-weight: bold;
-  color: #000;
+  font-weight: 300;
+  color: #fff;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.ContactItem:hover .ContactFont {
+  color: #b5e546;
+}
+
+
+.regNavText, .ContactFont {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 5px; /* Adjust spacing between text and underline */
+}
+
+.regNavText::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  bottom: 0;
+  width: 0%;
+  height: 4px; /* Line thickness */
+  border-radius: 4px;
+  background-color: #a8dc2b; /* Customize color */
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.regNavText:hover::after {
+  width: 120%;
 }

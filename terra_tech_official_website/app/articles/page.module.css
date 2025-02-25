@@ -1,0 +1,78 @@
+.pageContainer {
+    background: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:row;
+    align-items:flex-start;
+    padding: 40px 40px;
+    padding-top: 150px;
+  }
+  
+  .pageContainer h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .articleCard {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    /* margin-bottom: 20px; */
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .articleCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .articleCard h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .articleCard p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .articleLink {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #4ADE80;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .articleLink:hover {
+    color: #2c3e50;
+  }
+
+  .view_article_button {
+    background: #4ADE80;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  .view_article_button:hover {
+    transform: scale(1.05);
+  }

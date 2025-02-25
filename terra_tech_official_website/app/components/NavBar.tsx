@@ -14,18 +14,19 @@ type NavItem = {
 // Define the type for the props of the NavBar component
 type Props = {
   items: NavItem[];
-//   ContainerStyles: any
-//   TextStyles: any
+  NavBarStyle: any
+  NavLinksStyle: any
+  NavLogo: any
 };
 
 // Functional component definition
-const NavBar: React.FC<Props> = ({items}) => {
+const NavBar: React.FC<Props> = ({items, NavBarStyle, NavLinksStyle, NavLogo}) => {
   return (
-    <div>
-        <div>
+    <div className={NavBarStyle}>
+        <div className={NavLogo}>
             <Logo/>
         </div>
-        <div>
+        <div className={NavLinksStyle}>
             {items.map((item, index) => (
             <Link key={index} href={item.Link} className={item.ContainerStyles}>
             <p className={item.TextStyles}>{item.Name}</p>
