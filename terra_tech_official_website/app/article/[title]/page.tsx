@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { articleWebsiteDomain, accessCode  } from '@/lib'
 
 const fetchUserArticle = async (accessCode: string, articleTitle: string) => {
+    const domain = articleWebsiteDomain || 'https://default-api-url.com';
     try {
-        const response = await fetch(`${articleWebsiteDomain}/api/fetch-article/`, {
+        const response = await fetch(`${domain}/api/fetch-article/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,7 +29,7 @@ const fetchUserArticle = async (accessCode: string, articleTitle: string) => {
 }
 
 
-const page = async ({ params }: { params: { title: string } }) => {
+const page:any = async ({ params }: { params: { title: string } }) => {
     const { title } = params;
     const article = await fetchUserArticle(String(accessCode), String(title));
   return (

@@ -5,7 +5,8 @@ import styles from './page.module.css'
 
 const fetchUserArticles = async (accessCode: string) => {
     try {
-        const response = await fetch(`${articleWebsiteDomain}/api/fetch-articles/`, {
+        const domain = articleWebsiteDomain || 'https://default-api-url.com';
+        const response = await fetch(`${domain}/api/fetch-articles/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -32,7 +33,7 @@ const page = async () => {
     const articles = await fetchUserArticles(String(accessCode));
     return (
         <div className={styles.pageContainer}>
-            {articles.map((article: any, index: any) => (
+            {articles && articles.map((article: any, index: any) => (
                 <div key={index} className={styles.articleCard}>
                     <h2>{article.title}</h2>
                     <p>{article.description}</p>
