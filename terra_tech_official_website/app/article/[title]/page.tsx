@@ -29,7 +29,7 @@ const fetchUserArticle = async (accessCode: string, articleTitle: string) => {
 
 
 const page = async ({ params }: { params: { title: string } }) => {
-    const { title } = await params;
+    const { title } = params;
     const article = await fetchUserArticle(String(accessCode), String(title));
   return (
     <div>
