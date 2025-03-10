@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from './page.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
-import { fetchUserArticles } from "./articles/page";
+import { fetchUserArticles } from "@/lib";
 import { accessCode } from '@/lib'
 
 export default async function HomePage() {
