@@ -3,7 +3,7 @@ import { articleWebsiteDomain, accessCode } from '@/lib'
 import Link from 'next/link';
 import styles from './page.module.css'
 
-const fetchUserArticles = async (accessCode: string) => {
+export const fetchUserArticles = async (accessCode: string) => {
     try {
         const domain = articleWebsiteDomain || 'https://default-api-url.com';
         const response = await fetch(`${domain}/api/fetch-articles/`, {
@@ -31,15 +31,25 @@ const fetchUserArticles = async (accessCode: string) => {
 
 const page = async () => {
     const articles = await fetchUserArticles(String(accessCode));
+    const formatDate = (isoString: string) => {
+        const date = new Date(isoString);
+        return new Intl.DateTimeFormat("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }).format(date);
+      };
     return (
         <div className={styles.pageContainer}>
             {articles && articles.map((article: any, index: any) => (
                 <div key={index} className={styles.articleCard}>
-                    <h2>{article.title}</h2>
-                    <p>{article.description}</p>
-                    <p>{article.creation_date}</p>
                     <Link href="/article/[title]" as={`/article/${article.title}`}>
-                        <button className={styles.view_article_button}>View {article.title}</button>
+                        <img src={article.image_base64} alt="Image" className={styles.article_image}/>
+                        <h2>{article.title}</h2>
+                        <p>{article.description}</p>
+                        <p>{formatDate(article.creation_date)}</p>
+                    
+                        {/* <button className={styles.view_article_button}>View {article.title}</button> */}
                     </Link>
                 </div>
             ))}

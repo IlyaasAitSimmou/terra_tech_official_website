@@ -1,17 +1,20 @@
 .page_container {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+    background: url('../assets/background.jpg') no-repeat center center/cover;
   }
   
   .hero_section {
-    background-color: #1f1f1f;
+    background-color: #104113;
     color: white;
     text-align: center;
     padding: 50px 0;
   }
   
   .hero_title {
+    font-family: 'Inter', sans-serif;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 400;
   }
   
   .hero_description {
@@ -22,7 +25,7 @@
   .hero_button {
     margin: 10px;
     padding: 15px 30px;
-    background-color: #ff7f50;
+    background-color: #199a24;
     border: none;
     color: white;
     cursor: pointer;
@@ -31,19 +34,20 @@
   }
   
   .hero_button:hover {
-    background-color: #e67e22;
+    background-color: #28bf35;
   }
   
   .section {
     padding: 50px 20px;
-    background-color: #fafafa;
+    background: transparent;
+    backdrop-filter: blur(10px);
     color: #333;
     text-align: center;
   }
   
   .section_dark {
     padding: 50px 20px;
-    background-color: #333;
+    background-color: #17401a;
     color: white;
     text-align: center;
   }
@@ -51,6 +55,7 @@
   .section_title {
     font-size: 2rem;
     font-weight: bold;
+    color: aliceblue;
   }
   
   .section_content {
@@ -63,14 +68,14 @@
   .team_member, .team_member_dark {
     max-width: 300px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(218, 255, 219);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
   }
   
   .team_member_dark {
-    background-color: #444;
+    background-color: #1c7523;
   }
   
   .team_member_image {
@@ -88,6 +93,10 @@
   .team_member_role {
     font-size: 1.25rem;
     color: #666;
+  }
+
+  .team_member_role_dark {
+    color: #c1ffaa;
   }
   
   .team_member_bio {

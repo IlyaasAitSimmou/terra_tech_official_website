@@ -2,8 +2,13 @@ import Image from "next/image";
 import styles from './page.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
+import { fetchUserArticles } from "./articles/page";
+import { accessCode } from '@/lib'
 
-export default function HomePage() {
+export default async function HomePage() {
+
+  const fetchedArticles = await fetchUserArticles(String(accessCode));
+
   return (
     <>
         <main>
@@ -64,6 +69,41 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+    <div className={styles.featured_articles}>
+        <h1 className={styles.articles_title}>FEATURED ARTICLES</h1>
+        <div className={styles.articles_container}>
+          { fetchedArticles && (
+            <>
+              <div className={styles.article_card}>
+              <img src={fetchedArticles[0].image_base64} alt="Article 1" className={styles.article_image} />
+              <h2 className={styles.article_title}>{fetchedArticles[0].title}</h2>
+              <p className={styles.article_desc}>{fetchedArticles[0].description}</p>
+              <Link href="/article/[title]" as={`/article/${fetchedArticles[0].title}`}>
+                {/* <button className={styles.article_button}>READ MORE</button> */}
+                <p className={styles.article_link}>READ MORE →</p>
+              </Link>
+              </div>
+              <div className={styles.article_card}>
+                <Image src="/images/article2.jpg" alt="Article 2" width={350} height={200} className={styles.article_image} />
+                <h2 className={styles.article_title}>Eco-Friendly Innovations</h2>
+                <p className={styles.article_desc}>Exploring new technologies that reduce carbon footprints.</p>
+                <Link href="/articles/eco-innovations">
+                  <p className={styles.article_link}>READ MORE →</p>
+                </Link>
+              </div>
+              <div className={styles.article_card}>
+                <Image src="/images/article3.jpg" alt="Article 3" width={350} height={200} className={styles.article_image} />
+                <h2 className={styles.article_title}>Youth Activism in Climate Change</h2>
+                <p className={styles.article_desc}>How young leaders are making an impact on the environment.</p>
+                <Link href="/articles/youth-climate-activism">
+                  <p className={styles.article_link}>READ MORE →</p>
+                </Link>
+              </div>
+            </>
+          )}
+          
+        </div>
+      </div>
     </>
   );
 }

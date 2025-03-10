@@ -5,12 +5,15 @@ import styles from './page.module.css'; // assuming this file contains the style
 const Page = () => {
   const foundersRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
+  const ResourceRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (section: string) => {
     if (section === "founders" && foundersRef.current) {
       foundersRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (section === "media" && mediaRef.current) {
       mediaRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "resources" && ResourceRef.current) {
+      ResourceRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -36,6 +39,12 @@ const Page = () => {
           >
             Media & Communications Team
           </button>
+          <button
+            onClick={() => scrollToSection("media")}
+            className={styles.hero_button}
+          >
+            Resource Team
+          </button>
         </div>
       </section>
 
@@ -50,10 +59,10 @@ const Page = () => {
               alt="Founder 1"
               className={styles.team_member_image}
             />
-            <h3 className={styles.team_member_name}>Founder 1</h3>
+            <h3 className={styles.team_member_name}>Himil Patel</h3>
             <p className={styles.team_member_role}>CEO & Visionary Leader</p>
             <p className={styles.team_member_bio}>
-              Founder 1 is a visionary leader with a passion for innovation.
+              Himil is a visionary leader with a passion for innovation.
             </p>
           </div>
 
@@ -64,10 +73,10 @@ const Page = () => {
               alt="Founder 2"
               className={styles.team_member_image}
             />
-            <h3 className={styles.team_member_name}>Founder 2</h3>
+            <h3 className={styles.team_member_name}>Dhumin Patel</h3>
             <p className={styles.team_member_role}>COO & Operations Expert</p>
             <p className={styles.team_member_bio}>
-              Founder 2 is the driving force behind our operational success.
+              Dhumin is the driving force behind our operational success.
             </p>
           </div>
         </div>
@@ -85,7 +94,7 @@ const Page = () => {
               className={styles.team_member_image}
             />
             <h3 className={styles.team_member_name}>Media Member 1</h3>
-            <p className={styles.team_member_role}>Head of Communications</p>
+            <p className={styles.team_member_role_dark}>Head of Communications</p>
           </div>
 
           {/* Team Member 2 */}
@@ -96,7 +105,7 @@ const Page = () => {
               className={styles.team_member_image}
             />
             <h3 className={styles.team_member_name}>Media Member 2</h3>
-            <p className={styles.team_member_role}>Content Strategist</p>
+            <p className={styles.team_member_role_dark}>Content Strategist</p>
           </div>
 
           {/* Team Member 3 */}
@@ -107,7 +116,46 @@ const Page = () => {
               className={styles.team_member_image}
             />
             <h3 className={styles.team_member_name}>Media Member 3</h3>
-            <p className={styles.team_member_role}>Public Relations Specialist</p>
+            <p className={styles.team_member_role_dark}>Public Relations Specialist</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Team Section */}
+      <section ref={ResourceRef} className={styles.section}>
+        <h2 className={styles.section_title}>Resource Team</h2>
+        <div className={styles.section_content}>
+          {/* Team Member 1 */}
+          <div className={styles.team_member}>
+            <img
+              src="https://via.placeholder.com/120"
+              alt="Team Member 1"
+              className={styles.team_member_image}
+            />
+            <h3 className={styles.team_member_name}>Resource Member 1</h3>
+            <p className={styles.team_member_role}>Something fwiorjiowjfr</p>
+          </div>
+
+          {/* Team Member 2 */}
+          <div className={styles.team_member}>
+            <img
+              src="https://via.placeholder.com/120"
+              alt="Team Member 2"
+              className={styles.team_member_image}
+            />
+            <h3 className={styles.team_member_name}>Resource Member 2</h3>
+            <p className={styles.team_member_role}>Something fwiorjiowjfr</p>
+          </div>
+
+          {/* Team Member 3 */}
+          <div className={styles.team_member}>
+            <img
+              src="https://via.placeholder.com/120"
+              alt="Team Member 3"
+              className={styles.team_member_image}
+            />
+            <h3 className={styles.team_member_name}>Resource Member 3</h3>
+            <p className={styles.team_member_role}>Something fwiorjiowjfr</p>
           </div>
         </div>
       </section>
